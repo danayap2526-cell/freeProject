@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bright Falls — El juego de terror que se esconde dentro del tres en raya. ¿Atreverás a ganar?">
+  <title>Bright Falls | Horror Gaming</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+
+  <!-- FullPage.js CSS (CDN) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.min.css">
+
+  <!-- Nuestros estilos -->
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+
+  <!-- ============================================
+       NAVEGACIÓN SUPERIOR (mobile)
+  ============================================ -->
+  <nav class="nav-top" id="nav-top" role="navigation" aria-label="Menú principal">
+    <a href="#inicio" class="nav-logo" aria-label="Volver al inicio">BRIGHT FALLS</a>
+
+    <button class="nav-hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <ul class="nav-menu" id="nav-menu" role="list">
+      <li><a href="#inicio"    data-menuanchor="inicio"    class="nav-link active">Inicio</a></li>
+      <li><a href="#que-es"   data-menuanchor="que-es"    class="nav-link">El Juego</a></li>
+      <li><a href="#mecanica" data-menuanchor="mecanica"  class="nav-link">Mecánica</a></li>
+      <li><a href="#galeria"  data-menuanchor="galeria"   class="nav-link">Galería</a></li>
+      <li><a href="#jugar"    data-menuanchor="jugar"     class="nav-link">Jugar</a></li>
+    </ul>
+  </nav>
+
+  <!-- ============================================
+       CONTENEDOR PRINCIPAL — FULLPAGE
+  ============================================ -->
+  <main id="fullpage" role="main">
+
+    <!-- ══════════════════════════════════════
+         SECCIÓN 1 — HERO
+    ══════════════════════════════════════ -->
+    <section class="section sec-hero" id="inicio" aria-labelledby="hero-titulo">
+
+      <!-- Fondo decorativo: árbol SVG -->
+     
+
+      <!-- Efecto de luz -->
+      <div class="hero-glow"   aria-hidden="true"></div>
+      <div class="hero-ruido"  aria-hidden="true"></div>
+
+      <!-- Contenido central -->
+      <div class="hero-contenido">
+        <p class="etiqueta-seccion animate-fade-up">Bright Falls — Horror Gaming Studio</p>
+        <h1 class="hero-titulo animate-fade-up delay-1" id="hero-titulo">
+          JUEGA<span>O HUYE</span>
+        </h1>
+        <p class="hero-subtitulo animate-fade-up delay-2">
+          Una partida inocente. Una victoria inevitable.<br>Una consecuencia que no esperabas.
+        </p>
+        <a href="#jugar" class="btn-primario animate-fade-up delay-3" aria-label="Ir a jugar ahora">
+          JUGAR AHORA
+        </a>
+      </div>
+
+      <!-- Indicador de scroll -->
+      <div class="scroll-hint" aria-hidden="true">
+        <span>Continúa</span>
+        <div class="scroll-linea"></div>
+      </div>
+
+    </section><!-- fin #inicio -->
+
+
+    <!-- ══════════════════════════════════════
+         SECCIÓN 2 — QUÉ ES
+    ══════════════════════════════════════ -->
+    <section class="section sec-quees" id="que-es" aria-labelledby="quees-titulo">
+
+      <div class="quees-contenido">
+        <div class="quees-texto">
+          <p class="etiqueta-seccion reveal">El concepto</p>
+          <h2 class="titulo-seccion reveal delay-1" id="quees-titulo">
+            UN JUEGO<br>QUE TE<br>OBSERVA
+          </h2>
+          <p class="parrafo reveal delay-2">
+            <strong>Tres en raya.</strong> El juego más simple del mundo. Tres líneas, nueve casillas, reglas que conoces desde los cinco años.
+          </p>
+          <p class="parrafo reveal delay-3">
+            Pero hay algo que este juego nunca te ha contado. Algo que ocurre cuando ganas. Algo para lo que no estás preparado.
+          </p>
+          <blockquote class="cita reveal delay-4">
+            "No es un bucle, es una espiral."
+          </blockquote>
+        </div>
+
+        <div class="quees-tablero reveal delay-2" role="img" aria-label="Tablero de tres en raya con aspecto amenazante">
+          <div class="tablero-grid" id="tablero-preview">
+            <div class="celda x" aria-hidden="true">X</div>
+            <div class="celda o" aria-hidden="true">O</div>
+            <div class="celda vacia" aria-hidden="true">—</div>
+            <div class="celda vacia" aria-hidden="true">—</div>
+            <div class="celda x ganadora" aria-hidden="true">X</div>
+            <div class="celda o" aria-hidden="true">O</div>
+            <div class="celda o" aria-hidden="true">O</div>
+            <div class="celda vacia" aria-hidden="true">—</div>
+            <div class="celda x ganadora" aria-hidden="true">X</div>
+          </div>
+          <p class="tablero-leyenda" aria-hidden="true">¿Quién gana realmente?</p>
+        </div>
+      </div>
+
+    </section><!-- fin #que-es -->
+
+
+    <!-- ══════════════════════════════════════
+         SECCIÓN 3 — MECÁNICA
+    ══════════════════════════════════════ -->
+    <section class="section sec-mecanica" id="mecanica" aria-labelledby="mecanica-titulo">
+
+      <div class="mecanica-contenido">
+        <div class="mecanica-pasos">
+          <p class="etiqueta-seccion reveal">Cómo funciona</p>
+          <h2 class="titulo-seccion reveal delay-1" id="mecanica-titulo">LA MECÁNICA</h2>
+
+          <ol class="pasos-lista" role="list">
+            <li class="paso reveal delay-2">
+              <span class="paso-num" aria-hidden="true">01</span>
+              <div class="paso-info">
+                <h3>Elige tu ficha</h3>
+                <p>X o O. La elección que has hecho mil veces. Tan familiar. Tan... predecible.</p>
+              </div>
+            </li>
+            <li class="paso reveal delay-3">
+              <span class="paso-num" aria-hidden="true">02</span>
+              <div class="paso-info">
+                <h3>Juega contra la sombra</h3>
+                <p>La IA no comete errores. Cada movimiento calculado. Como si ya supiera lo que harás.</p>
+              </div>
+              
+            </li>
+            <li class="paso reveal delay-4">
+              <span class="paso-num" aria-hidden="true">03</span>
+              <div class="paso-info">
+                <h3>Gana... si puedes</h3>
+                <p>Consigue tres en raya. Entonces entenderás por qué algunos prefieren perder.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <aside class="advertencia reveal delay-3" role="note" aria-label="Advertencia de contenido">
+          <p class="advertencia-icono" aria-hidden="true">⚠</p>
+          <h3>Advertencia de contenido</h3>
+          <p>
+            Este juego contiene elementos de terror psicológico diseñados para sorprender en el momento de la victoria.
+          </p>
+          <p>
+            No recomendado para personas con trastornos de ansiedad, epilepsia fotosensible, o que estén solos en casa a las 3:00 AM.
+          </p>
+          <p class="advertencia-letra-pequena">
+            Bright Falls no se responsabiliza de cafés derramados, gritos involuntarios ni relaciones dañadas con el ratón.
+          </p>
+        </aside>
+      </div>
+
+    </section><!-- fin #mecanica -->
+
+
+    <!-- ══════════════════════════════════════
+         SECCIÓN 4 — GALERÍA
+    ══════════════════════════════════════ -->
+    <section class="section sec-galeria" id="galeria" aria-labelledby="galeria-titulo">
+
+      <div class="galeria-cabecera reveal">
+        <h2 class="titulo-seccion" id="galeria-titulo">LA ATMÓSFERA</h2>
+      </div>
+
+      <div class="container">
+            <div class="panel active"
+                style="background-image: url('https://images.unsplash.com/photo-1558979158-65a1eaa08691?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')">
+                <h3>Explore the world</h3>
+            </div>
+            <div class="panel"
+                style="background-image: url('https://images.unsplash.com/photo-1572276596237-5db2c3e16c5d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');">
+                <h3>Wild Forest</h3>
+            </div>
+            <div class="panel"
+                style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1353&q=80');">
+                <h3>Sunny Beach</h3>
+            </div>
+            <div class="panel"
+                style="background-image: url('https://images.unsplash.com/photo-1551009175-8a68da93d5f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80');">
+                <h3>City on Winter</h3>
+            </div>
+            <div class="panel"
+                style="background-image: url('https://images.unsplash.com/photo-1549880338-65ddcdfd017b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');">
+                <h3>Mountains - Clouds</h3>
+            </div>
+        </div>
+
+    </section><!-- fin #galeria -->
+
+
+    <!-- ══════════════════════════════════════
+         SECCIÓN 5 — CTA FINAL
+    ══════════════════════════════════════ -->
+    <section class="section sec-cta" id="jugar" aria-labelledby="cta-titulo">
+
+      <!-- Texto de fondo decorativo -->
+      <p class="cta-texto-fondo" aria-hidden="true">BRIGHT FALLS</p>
+
+      <div class="cta-contenido">
+        <p class="etiqueta-seccion reveal">Última advertencia</p>
+        <h2 class="cta-titulo reveal delay-1" id="cta-titulo">
+          ¿ESTÁS<br>LISTO?
+        </h2>
+        <p class="parrafo cta-desc reveal delay-2">
+          Miles de jugadores han llegado hasta aquí. La mayoría pensaba que podía con ello.<br>
+          Todos ganaron. Todos lo lamentaron.
+        </p>
+        <div class="cta-botones reveal delay-3">
+          <a href="game.html" class="btn-primario" aria-label="Comenzar a jugar Bright Falls">COMENZAR</a>
+          <a href="#inicio"   class="btn-fantasma" aria-label="Volver al inicio">QUIZÁS DESPUÉS</a>
+        </div>
+        <p class="cta-pie reveal delay-4">
+          Bright Falls Studio &middot; High-End Horror Gaming &middot; 2025
+        </p>
+      </div>
+
+    </section><!-- fin #jugar -->
+
+  </main><!-- fin #fullpage -->
+
+
+  <!-- FullPage.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.min.js"></script>
+  <!-- Galería (primero, porque app.js la usa) -->
+  <script src="scripts/galeria.js"></script>
+  <!-- App principal -->
+  <script src="scripts/app.js"></script>
+
+</body>
+</html>
