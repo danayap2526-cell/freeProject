@@ -1,7 +1,20 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
+import dades.ConexionDB;
+import vista.VentanaLogin;
+import javax.swing.*;
 void main() {
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
-   
+
+    try {
+        UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+    } catch (Exception e) {
+        System.err.println("LookAndFeel no disponible: " + e.getMessage());
+    }
+
+    SwingUtilities.invokeLater(() -> {
+        VentanaLogin login = new VentanaLogin();
+        login.setVisible(true);
+    });
+
+    Runtime.getRuntime().addShutdownHook(new Thread(ConexionDB::cerrar));
+
 }
