@@ -1074,3 +1074,419 @@ p {
     justify-content: center;
   }
 }
+
+/* ============================================================
+   NUEVOS ESTILOS — v2
+   Añadidos: skip-link, barra urgencia, autoridad hero,
+   reciprocidad, sección testimonios, CTA urgencia, CTA autoridad
+   ============================================================ */
+
+
+/* ────────────────────────────────────────
+   SKIP LINK — Accesibilidad teclado (WCAG 2.4.1)
+──────────────────────────────────────── */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 16px;
+  z-index: 9999;
+  background-color: var(--ocre);
+  color: var(--negro);
+  padding: 10px 20px;
+  font-family: var(--fuente-titulo);
+  font-size: 14px;
+  letter-spacing: 2px;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 16px;
+}
+
+
+/* ────────────────────────────────────────
+   BARRA DE URGENCIA
+──────────────────────────────────────── */
+.barra-urgencia {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1100;
+  background-color: var(--granate);
+  color: var(--blanco);
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-align: center;
+  padding: 10px 48px 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  min-height: 40px;
+}
+
+.urgencia-icono {
+  font-size: 14px;
+}
+
+.urgencia-cta {
+  color: var(--ocre);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color var(--transicion);
+}
+
+.urgencia-cta:hover,
+.urgencia-cta:focus-visible {
+  color: var(--blanco);
+}
+
+.urgencia-cerrar {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255,255,255,0.6);
+  font-size: 18px;
+  line-height: 1;
+  padding: 4px 8px;
+  transition: color var(--transicion);
+}
+
+.urgencia-cerrar:hover,
+.urgencia-cerrar:focus-visible {
+  color: var(--blanco);
+}
+
+
+/* ────────────────────────────────────────
+   AUTORIDAD — Cifras en el HERO
+──────────────────────────────────────── */
+.hero-autoridad {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: var(--espacio-l);
+  flex-wrap: wrap;
+}
+
+.autoridad-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.autoridad-stat strong {
+  font-family: var(--fuente-titulo);
+  font-size: 22px;
+  color: var(--ocre);
+  letter-spacing: 2px;
+  line-height: 1;
+}
+
+.autoridad-stat span {
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+}
+
+.autoridad-sep {
+  width: 1px;
+  height: 32px;
+  background-color: rgba(255,255,255,0.12);
+}
+
+@media (max-width: 400px) {
+  .autoridad-sep { display: none; }
+  .hero-autoridad { gap: 24px; }
+}
+
+
+/* ────────────────────────────────────────
+   RECIPROCIDAD — Bloque descarga gratuita
+──────────────────────────────────────── */
+.reciprocidad-bloque {
+  margin-top: var(--espacio-l);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 20px 24px;
+  background-color: rgba(255,255,255,0.03);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.reciprocidad-etiqueta {
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--ocre);
+  font-weight: 600;
+  margin: 0;
+}
+
+.reciprocidad-texto {
+  font-size: 13px;
+  color: rgba(255,255,255,0.55);
+  margin: 0;
+  line-height: 1.7;
+}
+
+.reciprocidad-texto strong {
+  color: var(--blanco);
+}
+
+.btn-reciprocidad {
+  display: inline-block;
+  font-family: var(--fuente-titulo);
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: var(--ocre);
+  border-bottom: 1px solid rgba(209,142,74,0.4);
+  padding-bottom: 2px;
+  width: fit-content;
+  transition: color var(--transicion), border-color var(--transicion);
+}
+
+.btn-reciprocidad:hover,
+.btn-reciprocidad:focus-visible {
+  color: var(--blanco);
+  border-color: rgba(255,255,255,0.4);
+}
+
+
+/* ────────────────────────────────────────
+   13. SECCIÓN TESTIMONIOS
+──────────────────────────────────────── */
+.sec-testimonios {
+  background-color: #0F2D1A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 70px;
+  overflow: hidden;
+}
+
+.testimonios-contenido {
+  width: 100%;
+  max-width: 1100px;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--espacio-m);
+}
+
+.testimonios-cabecera {
+  text-align: center;
+}
+
+.testimonios-intro {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* Grid de tarjetas */
+.testimonios-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .testimonios-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Tarjeta individual */
+.testimonio {
+  background-color: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: relative;
+  transition: border-color var(--transicion);
+}
+
+.testimonio:hover {
+  border-color: rgba(255,255,255,0.2);
+}
+
+/* Tarjeta destacada */
+.testimonio-destacado {
+  border-color: rgba(209,142,74,0.35);
+  background-color: rgba(209,142,74,0.05);
+}
+
+.testimonio-badge {
+  position: absolute;
+  top: -1px;
+  left: 24px;
+  background-color: var(--ocre);
+  color: var(--negro);
+  font-family: var(--fuente-titulo);
+  font-size: 9px;
+  letter-spacing: 3px;
+  padding: 3px 10px;
+}
+
+/* Estrellas */
+.testimonio-estrellas {
+  font-size: 14px;
+  color: var(--ocre);
+  letter-spacing: 2px;
+}
+
+/* Texto de cita */
+.testimonio-texto {
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.7);
+  font-style: italic;
+  margin: 0;
+  flex: 1;
+}
+
+/* Autor */
+.testimonio-autor {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-style: normal;
+}
+
+.testimonio-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--granate);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--fuente-titulo);
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: var(--blanco);
+  flex-shrink: 0;
+}
+
+.testimonio-autor strong {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: var(--blanco);
+}
+
+.testimonio-autor span {
+  display: block;
+  font-size: 10px;
+  color: rgba(255,255,255,0.3);
+  letter-spacing: 1px;
+}
+
+/* Cifras de autoridad secundaria */
+.testimonios-cifras {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0;
+  border: 1px solid rgba(255,255,255,0.08);
+  width: 100%;
+}
+
+.cifra {
+  flex: 1 1 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 20px 16px;
+  border-right: 1px solid rgba(255,255,255,0.08);
+  text-align: center;
+}
+
+.cifra:last-child {
+  border-right: none;
+}
+
+.cifra strong {
+  font-family: var(--fuente-titulo);
+  font-size: 28px;
+  color: var(--ocre);
+  letter-spacing: 2px;
+  line-height: 1;
+}
+
+.cifra span {
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+}
+
+
+/* ────────────────────────────────────────
+   CTA URGENCIA (sección Jugar)
+──────────────────────────────────────── */
+.cta-urgencia {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: rgba(255,255,255,0.5);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 10px 20px;
+  margin-bottom: var(--espacio-m);
+  margin-top: calc(var(--espacio-m) * -0.5);
+}
+
+.urgencia-punto {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #4ade80;
+  animation: parpadeo 1.4s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes parpadeo {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.2; }
+}
+
+.cta-urgencia strong {
+  color: var(--blanco);
+}
+
+
+/* ────────────────────────────────────────
+   CTA AUTORIDAD (premios/reconocimientos)
+──────────────────────────────────────── */
+.cta-autoridad {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px 16px;
+  margin-bottom: var(--espacio-m);
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: rgba(255,255,255,0.3);
+}
+
+.cta-autoridad span:not([aria-hidden]) {
+  white-space: nowrap;
+}

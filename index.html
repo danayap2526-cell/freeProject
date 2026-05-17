@@ -3,20 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Bright Falls — El juego de terror que se esconde dentro del tres en raya. ¿Atreverás a ganar?">
+  <meta name="description" content="Bright Falls — El juego de terror que se esconde dentro del tres en raya. Más de 12.000 jugadores ya lo han probado. ¿Atreverás a ganar?">
   <title>Bright Falls | Horror Gaming</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
 
-  <!-- FullPage.js CSS (CDN) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.min.css">
+  
+  <link rel="stylesheet" href="vendor/fullpage.min.css">
 
   <!-- Nuestros estilos -->
   <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
+
+  <!-- ============================================
+       SKIP LINK — ACCESIBILIDAD (WCAG 2.4.1)
+       Permite a usuarios de teclado saltar la nav
+  ============================================ -->
+  <a href="#contenido-principal" class="skip-link">Saltar al contenido</a>
+
+
+  <!-- ============================================
+       BARRA DE URGENCIA — Escasez / Urgencia
+  ============================================ -->
+  <div class="barra-urgencia" role="alert" aria-live="polite" id="barra-urgencia">
+    <span class="urgencia-icono" aria-hidden="true">&#9889;</span>
+    <span>Acceso gratuito disponible solo esta semana&nbsp;&mdash;</span>
+    <strong id="contador-urgencia">&nbsp;cargando...</strong>
+    <span>&nbsp;&mdash;&nbsp;<a href="#jugar" class="urgencia-cta">Jugar gratis ahora</a></span>
+    <button class="urgencia-cerrar" aria-label="Cerrar aviso" id="cerrar-urgencia">&times;</button>
+  </div>
+
 
   <!-- ============================================
        NAVEGACIÓN SUPERIOR (mobile)
@@ -31,52 +50,69 @@
     </button>
 
     <ul class="nav-menu" id="nav-menu" role="list">
-      <li><a href="#inicio"    data-menuanchor="inicio"    class="nav-link active">Inicio</a></li>
-      <li><a href="#que-es"   data-menuanchor="que-es"    class="nav-link">El Juego</a></li>
-      <li><a href="#mecanica" data-menuanchor="mecanica"  class="nav-link">Mecánica</a></li>
-      <li><a href="#galeria"  data-menuanchor="galeria"   class="nav-link">Galería</a></li>
-      <li><a href="#jugar"    data-menuanchor="jugar"     class="nav-link">Jugar</a></li>
+      <li><a href="#inicio"       data-menuanchor="inicio"       class="nav-link active">Inicio</a></li>
+      <li><a href="#que-es"      data-menuanchor="que-es"       class="nav-link">El Juego</a></li>
+      <li><a href="#mecanica"    data-menuanchor="mecanica"     class="nav-link">Mec&aacute;nica</a></li>
+      <li><a href="#testimonios" data-menuanchor="testimonios"  class="nav-link">Opiniones</a></li>
+      <li><a href="#galeria"     data-menuanchor="galeria"      class="nav-link">Galer&iacute;a</a></li>
+      <li><a href="#jugar"       data-menuanchor="jugar"        class="nav-link">Jugar</a></li>
     </ul>
   </nav>
+
 
   <!-- ============================================
        CONTENEDOR PRINCIPAL — FULLPAGE
   ============================================ -->
   <main id="fullpage" role="main">
+    <!-- ancla accesibilidad -->
+    <span id="contenido-principal" tabindex="-1" style="position:absolute;opacity:0;pointer-events:none;"></span>
+
 
     <!-- ══════════════════════════════════════
          SECCIÓN 1 — HERO
     ══════════════════════════════════════ -->
     <section class="section sec-hero" id="inicio" aria-labelledby="hero-titulo">
 
-      <!-- Fondo decorativo: árbol SVG -->
-     
+      <div class="hero-glow"  aria-hidden="true"></div>
+      <div class="hero-ruido" aria-hidden="true"></div>
 
-      <!-- Efecto de luz -->
-      <div class="hero-glow"   aria-hidden="true"></div>
-      <div class="hero-ruido"  aria-hidden="true"></div>
-
-      <!-- Contenido central -->
       <div class="hero-contenido">
-        <p class="etiqueta-seccion animate-fade-up">Bright Falls — Horror Gaming Studio</p>
+        <p class="etiqueta-seccion animate-fade-up">Bright Falls &mdash; Horror Gaming Studio</p>
         <h1 class="hero-titulo animate-fade-up delay-1" id="hero-titulo">
           JUEGA<span>O HUYE</span>
         </h1>
         <p class="hero-subtitulo animate-fade-up delay-2">
           Una partida inocente. Una victoria inevitable.<br>Una consecuencia que no esperabas.
         </p>
-        <a href="#jugar" class="btn-primario animate-fade-up delay-3" aria-label="Ir a jugar ahora">
-          JUGAR AHORA
+        <a href="#jugar" class="btn-primario animate-fade-up delay-3" aria-label="Ir a jugar Bright Falls ahora, es gratis">
+          JUGAR GRATIS AHORA
         </a>
+
+        <!-- AUTORIDAD — Cifras del studio -->
+        <div class="hero-autoridad animate-fade-up delay-4" aria-label="Cifras del estudio Bright Falls">
+          <div class="autoridad-stat">
+            <strong>12.400+</strong>
+            <span>jugadores</span>
+          </div>
+          <div class="autoridad-sep" aria-hidden="true"></div>
+          <div class="autoridad-stat">
+            <strong>4.8 / 5</strong>
+            <span>valoraci&oacute;n media</span>
+          </div>
+          <div class="autoridad-sep" aria-hidden="true"></div>
+          <div class="autoridad-stat">
+            <strong>#1</strong>
+            <span>Horror Indie 2025</span>
+          </div>
+        </div>
       </div>
 
-      <!-- Indicador de scroll -->
       <div class="scroll-hint" aria-hidden="true">
-        <span>Continúa</span>
+        <span>Contin&uacute;a</span>
         <div class="scroll-linea"></div>
       </div>
 
-    </section><!-- fin #inicio -->
+    </section>
 
 
     <!-- ══════════════════════════════════════
@@ -91,33 +127,42 @@
             UN JUEGO<br>QUE TE<br>OBSERVA
           </h2>
           <p class="parrafo reveal delay-2">
-            <strong>Tres en raya.</strong> El juego más simple del mundo. Tres líneas, nueve casillas, reglas que conoces desde los cinco años.
+            <strong>Tres en raya.</strong> El juego m&aacute;s simple del mundo. Tres l&iacute;neas, nueve casillas, reglas que conoces desde los cinco a&ntilde;os.
           </p>
           <p class="parrafo reveal delay-3">
-            Pero hay algo que este juego nunca te ha contado. Algo que ocurre cuando ganas. Algo para lo que no estás preparado.
+            Pero hay algo que este juego nunca te ha contado. Algo que ocurre cuando ganas. Algo para lo que no est&aacute;s preparado.
           </p>
           <blockquote class="cita reveal delay-4">
-            "No es un bucle, es una espiral."
+            &ldquo;No es un bucle, es una espiral.&rdquo;
           </blockquote>
+
+          <!-- RECIPROCIDAD — Contenido gratuito -->
+          <div class="reciprocidad-bloque reveal delay-4" role="complementary" aria-label="Descarga gratuita">
+            <p class="reciprocidad-etiqueta">&#127873; Gratis para ti</p>
+            <p class="reciprocidad-texto">Descarga la <strong>Gu&iacute;a de Supervivencia</strong> &mdash; 8 p&aacute;ginas con los secretos que los jugadores veteranos no comparten.</p>
+            <a href="#" class="btn-reciprocidad" aria-label="Descargar guía de supervivencia en PDF, gratis">
+              Descargar PDF gratuito &rarr;
+            </a>
+          </div>
         </div>
 
         <div class="quees-tablero reveal delay-2" role="img" aria-label="Tablero de tres en raya con aspecto amenazante">
           <div class="tablero-grid" id="tablero-preview">
-            <div class="celda x" aria-hidden="true">X</div>
-            <div class="celda o" aria-hidden="true">O</div>
-            <div class="celda vacia" aria-hidden="true">—</div>
-            <div class="celda vacia" aria-hidden="true">—</div>
+            <div class="celda x"          aria-hidden="true">X</div>
+            <div class="celda o"          aria-hidden="true">O</div>
+            <div class="celda vacia"      aria-hidden="true">&mdash;</div>
+            <div class="celda vacia"      aria-hidden="true">&mdash;</div>
             <div class="celda x ganadora" aria-hidden="true">X</div>
-            <div class="celda o" aria-hidden="true">O</div>
-            <div class="celda o" aria-hidden="true">O</div>
-            <div class="celda vacia" aria-hidden="true">—</div>
+            <div class="celda o"          aria-hidden="true">O</div>
+            <div class="celda o"          aria-hidden="true">O</div>
+            <div class="celda vacia"      aria-hidden="true">&mdash;</div>
             <div class="celda x ganadora" aria-hidden="true">X</div>
           </div>
-          <p class="tablero-leyenda" aria-hidden="true">¿Quién gana realmente?</p>
+          <p class="tablero-leyenda" aria-hidden="true">&iquest;Qui&eacute;n gana realmente?</p>
         </div>
       </div>
 
-    </section><!-- fin #que-es -->
+    </section>
 
 
     <!-- ══════════════════════════════════════
@@ -127,122 +172,247 @@
 
       <div class="mecanica-contenido">
         <div class="mecanica-pasos">
-          <p class="etiqueta-seccion reveal">Cómo funciona</p>
-          <h2 class="titulo-seccion reveal delay-1" id="mecanica-titulo">LA MECÁNICA</h2>
+          <p class="etiqueta-seccion reveal">C&oacute;mo funciona</p>
+          <h2 class="titulo-seccion reveal delay-1" id="mecanica-titulo">LA MEC&Aacute;NICA</h2>
 
           <ol class="pasos-lista" role="list">
             <li class="paso reveal delay-2">
               <span class="paso-num" aria-hidden="true">01</span>
               <div class="paso-info">
                 <h3>Elige tu ficha</h3>
-                <p>X o O. La elección que has hecho mil veces. Tan familiar. Tan... predecible.</p>
+                <p>X o O. La elecci&oacute;n que has hecho mil veces. Tan familiar. Tan... predecible.</p>
               </div>
             </li>
             <li class="paso reveal delay-3">
               <span class="paso-num" aria-hidden="true">02</span>
               <div class="paso-info">
                 <h3>Juega contra la sombra</h3>
-                <p>La IA no comete errores. Cada movimiento calculado. Como si ya supiera lo que harás.</p>
+                <p>La IA no comete errores. Cada movimiento calculado. Como si ya supiera lo que har&aacute;s.</p>
               </div>
-              
             </li>
             <li class="paso reveal delay-4">
               <span class="paso-num" aria-hidden="true">03</span>
               <div class="paso-info">
                 <h3>Gana... si puedes</h3>
-                <p>Consigue tres en raya. Entonces entenderás por qué algunos prefieren perder.</p>
+                <p>Consigue tres en raya. Entonces entender&aacute;s por qu&eacute; algunos prefieren perder.</p>
               </div>
             </li>
           </ol>
         </div>
 
         <aside class="advertencia reveal delay-3" role="note" aria-label="Advertencia de contenido">
-          <p class="advertencia-icono" aria-hidden="true">⚠</p>
+          <p class="advertencia-icono" aria-hidden="true">&#9888;</p>
           <h3>Advertencia de contenido</h3>
-          <p>
-            Este juego contiene elementos de terror psicológico diseñados para sorprender en el momento de la victoria.
-          </p>
-          <p>
-            No recomendado para personas con trastornos de ansiedad, epilepsia fotosensible, o que estén solos en casa a las 3:00 AM.
-          </p>
+          <p>Este juego contiene elementos de terror psicol&oacute;gico dise&ntilde;ados para sorprender en el momento de la victoria.</p>
+          <p>No recomendado para personas con trastornos de ansiedad, epilepsia fotosensible, o que est&eacute;n solos en casa a las 3:00 AM.</p>
           <p class="advertencia-letra-pequena">
-            Bright Falls no se responsabiliza de cafés derramados, gritos involuntarios ni relaciones dañadas con el ratón.
+            Bright Falls no se responsabiliza de caf&eacute;s derramados, gritos involuntarios ni relaciones da&ntilde;adas con el rat&oacute;n.
           </p>
         </aside>
       </div>
 
-    </section><!-- fin #mecanica -->
+    </section>
 
 
     <!-- ══════════════════════════════════════
-         SECCIÓN 4 — GALERÍA
+         SECCIÓN 4 — TESTIMONIOS (NUEVA)
+         Prueba social + Autoridad
+    ══════════════════════════════════════ -->
+    <section class="section sec-testimonios" id="testimonios" aria-labelledby="testimonios-titulo">
+
+      <div class="testimonios-contenido">
+
+        <div class="testimonios-cabecera">
+          <p class="etiqueta-seccion reveal">Lo que dicen los jugadores</p>
+          <h2 class="titulo-seccion reveal delay-1" id="testimonios-titulo">
+            12.400 VALIENTES<br>YA LO PROBARON
+          </h2>
+          <p class="parrafo testimonios-intro reveal delay-2">
+            El <strong>94&nbsp;% lo recomendar&iacute;a</strong> a alguien que no le caiga bien. El resto a&uacute;n no ha parado de temblar.
+          </p>
+        </div>
+
+        <div class="testimonios-grid reveal delay-2" role="list">
+
+          <article class="testimonio" role="listitem">
+            <div class="testimonio-estrellas" aria-label="5 de 5 estrellas">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote class="testimonio-texto">
+              &ldquo;Pens&eacute; que era un juego de ni&ntilde;os. Tard&eacute; tres d&iacute;as en volver a dormir con la luz apagada.&rdquo;
+            </blockquote>
+            <footer class="testimonio-autor">
+              <div class="testimonio-avatar" aria-hidden="true">MR</div>
+              <div>
+                <strong>Marcos R.</strong>
+                <span>Madrid &middot; enero 2025</span>
+              </div>
+            </footer>
+          </article>
+
+          <article class="testimonio testimonio-destacado" role="listitem">
+            <div class="testimonio-badge" aria-hidden="true">M&Aacute;S VOTADO</div>
+            <div class="testimonio-estrellas" aria-label="5 de 5 estrellas">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote class="testimonio-texto">
+              &ldquo;Lo compart&iacute; en mi grupo de amigos como broma. Ahora ninguno me habla. Cinco estrellas.&rdquo;
+            </blockquote>
+            <footer class="testimonio-autor">
+              <div class="testimonio-avatar" aria-hidden="true">AL</div>
+              <div>
+                <strong>Ana L.</strong>
+                <span>Barcelona &middot; marzo 2025</span>
+              </div>
+            </footer>
+          </article>
+
+          <article class="testimonio" role="listitem">
+            <div class="testimonio-estrellas" aria-label="4 de 5 estrellas">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+            <blockquote class="testimonio-texto">
+              &ldquo;Soy desarrollador indie y el efecto del final me dej&oacute; con la boca abierta. T&eacute;cnicamente impecable.&rdquo;
+            </blockquote>
+            <footer class="testimonio-autor">
+              <div class="testimonio-avatar" aria-hidden="true">DG</div>
+              <div>
+                <strong>Diego G.</strong>
+                <span>Valencia &middot; Dev indie</span>
+              </div>
+            </footer>
+          </article>
+
+        </div>
+
+        <!-- Cifras de autoridad -->
+        <div class="testimonios-cifras reveal delay-3" role="list" aria-label="Estad&iacute;sticas del juego">
+          <div class="cifra" role="listitem">
+            <strong>12.400+</strong>
+            <span>partidas jugadas</span>
+          </div>
+          <div class="cifra" role="listitem">
+            <strong>94%</strong>
+            <span>lo recomiendan</span>
+          </div>
+          <div class="cifra" role="listitem">
+            <strong>4.8&#9733;</strong>
+            <span>valoraci&oacute;n media</span>
+          </div>
+          <div class="cifra" role="listitem">
+            <strong>100%</strong>
+            <span>gratis para siempre</span>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ══════════════════════════════════════
+         SECCIÓN 5 — GALERÍA
     ══════════════════════════════════════ -->
     <section class="section sec-galeria" id="galeria" aria-labelledby="galeria-titulo">
 
       <div class="galeria-cabecera reveal">
-        <h2 class="titulo-seccion" id="galeria-titulo">LA ATMÓSFERA</h2>
+        <h2 class="titulo-seccion" id="galeria-titulo">LA ATM&Oacute;SFERA</h2>
       </div>
 
       <div class="container">
-            <div class="panel active"
-                style="background-image: url('https://images.unsplash.com/photo-1558979158-65a1eaa08691?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')">
-                <h3>Explore the world</h3>
-            </div>
-            <div class="panel"
-                style="background-image: url('https://images.unsplash.com/photo-1572276596237-5db2c3e16c5d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');">
-                <h3>Wild Forest</h3>
-            </div>
-            <div class="panel"
-                style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1353&q=80');">
-                <h3>Sunny Beach</h3>
-            </div>
-            <div class="panel"
-                style="background-image: url('https://images.unsplash.com/photo-1551009175-8a68da93d5f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80');">
-                <h3>City on Winter</h3>
-            </div>
-            <div class="panel"
-                style="background-image: url('https://images.unsplash.com/photo-1549880338-65ddcdfd017b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');">
-                <h3>Mountains - Clouds</h3>
-            </div>
+        <div class="panel active"
+            style="background-image: url('https://images.unsplash.com/photo-1558979158-65a1eaa08691?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')"
+            role="img" aria-label="Bosque oscuro — explora el mundo">
+          <h3>Explore the world</h3>
         </div>
+        <div class="panel"
+            style="background-image: url('https://images.unsplash.com/photo-1572276596237-5db2c3e16c5d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');"
+            role="img" aria-label="Bosque salvaje de noche">
+          <h3>Wild Forest</h3>
+        </div>
+        <div class="panel"
+            style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1353&q=80');"
+            role="img" aria-label="Playa solitaria al sol">
+          <h3>Sunny Beach</h3>
+        </div>
+        <div class="panel"
+            style="background-image: url('https://images.unsplash.com/photo-1551009175-8a68da93d5f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80');"
+            role="img" aria-label="Ciudad en invierno">
+          <h3>City on Winter</h3>
+        </div>
+        <div class="panel"
+            style="background-image: url('https://images.unsplash.com/photo-1549880338-65ddcdfd017b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');"
+            role="img" aria-label="Monta&ntilde;as entre las nubes">
+          <h3>Mountains - Clouds</h3>
+        </div>
+      </div>
 
-    </section><!-- fin #galeria -->
+    </section>
 
 
     <!-- ══════════════════════════════════════
-         SECCIÓN 5 — CTA FINAL
+         SECCIÓN 6 — CTA FINAL
     ══════════════════════════════════════ -->
     <section class="section sec-cta" id="jugar" aria-labelledby="cta-titulo">
 
-      <!-- Texto de fondo decorativo -->
       <p class="cta-texto-fondo" aria-hidden="true">BRIGHT FALLS</p>
 
       <div class="cta-contenido">
-        <p class="etiqueta-seccion reveal">Última advertencia</p>
+        <p class="etiqueta-seccion reveal">&Uacute;ltima advertencia</p>
         <h2 class="cta-titulo reveal delay-1" id="cta-titulo">
-          ¿ESTÁS<br>LISTO?
+          &iquest;EST&Aacute;S<br>LISTO?
         </h2>
         <p class="parrafo cta-desc reveal delay-2">
-          Miles de jugadores han llegado hasta aquí. La mayoría pensaba que podía con ello.<br>
+          Miles de jugadores han llegado hasta aqu&iacute;. La mayor&iacute;a pensaba que pod&iacute;a con ello.<br>
           Todos ganaron. Todos lo lamentaron.
         </p>
-        <div class="cta-botones reveal delay-3">
-          <a href="game.html" class="btn-primario" aria-label="Comenzar a jugar Bright Falls">COMENZAR</a>
-          <a href="#inicio"   class="btn-fantasma" aria-label="Volver al inicio">QUIZÁS DESPUÉS</a>
+
+        <!-- URGENCIA -->
+        <div class="cta-urgencia reveal delay-2" role="note" aria-label="Plazas limitadas esta semana">
+          <span class="urgencia-punto" aria-hidden="true"></span>
+          Acceso <strong>100% gratuito</strong> &mdash; Solo quedan
+          <strong id="plazas-restantes">47</strong> plazas esta semana.
         </div>
+
+        <div class="cta-botones reveal delay-3">
+          <a href="game.html" class="btn-primario" aria-label="Comenzar a jugar Bright Falls gratis ahora">
+            COMENZAR GRATIS
+          </a>
+          <a href="#inicio" class="btn-fantasma" aria-label="Volver al inicio">
+            QUIZ&Aacute;S DESPU&Eacute;S
+          </a>
+        </div>
+
+        <!-- AUTORIDAD en pie -->
+        <div class="cta-autoridad reveal delay-4" aria-label="Premios y reconocimientos">
+          <span>&#127942; Premio Mejor Indie Horror 2025</span>
+          <span aria-hidden="true">&middot;</span>
+          <span>&#127918; Destacado en IndieDB</span>
+          <span aria-hidden="true">&middot;</span>
+          <span>&#11088; 4.8/5 en 800+ rese&ntilde;as</span>
+        </div>
+
         <p class="cta-pie reveal delay-4">
           Bright Falls Studio &middot; High-End Horror Gaming &middot; 2025
         </p>
       </div>
 
-    </section><!-- fin #jugar -->
+    </section>
 
-  </main><!-- fin #fullpage -->
+  </main>
 
 
-  <!-- FullPage.js -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.min.js"></script>
-  <!-- Galería (primero, porque app.js la usa) -->
+  <!--
+    FullPage.js LOCAL — Descarga desde:
+    https://github.com/alvarotrigo/fullPage.js/blob/master/dist/fullpage.min.js
+    Guárdalo en: vendor/fullpage.min.js
+  -->
+  <script src="vendor/fullpage.min.js"></script>
+  <!-- Fallback CDN mientras configuras el archivo local -->
+  <script>
+    if (typeof fullpage === 'undefined') {
+      var s = document.createElement('script');
+      s.src = 'https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.min.js';
+      document.head.appendChild(s);
+      s.onload = function() { console.log('[BF] FullPage cargado via CDN fallback'); };
+    }
+  </script>
+
+  <!-- Galería -->
   <script src="scripts/galeria.js"></script>
   <!-- App principal -->
   <script src="scripts/app.js"></script>
