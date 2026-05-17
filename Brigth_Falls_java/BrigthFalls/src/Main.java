@@ -2,8 +2,9 @@
 import dades.ConexionDB;
 import vista.VentanaLogin;
 import javax.swing.*;
-void main() {
 
+
+public static void main(String[] args) {
     try {
         UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
     } catch (Exception e) {
@@ -16,5 +17,5 @@ void main() {
     });
 
     Runtime.getRuntime().addShutdownHook(new Thread(ConexionDB::cerrar));
-
 }
+
